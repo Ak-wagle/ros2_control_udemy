@@ -7,6 +7,8 @@ controller_manager:
     diff_drive_controller:
       type: diff_drive_controller/DiffDriveController
       left_wheel: ['left_wheel_joint']
+    arm_joints_controller:
+      type: forward_command_controller/ForwardCommandController
 
 diff_drive_controller:
   ros__parameters:
@@ -24,3 +26,8 @@ diff_drive_controller:
 
     enable_odom_tf: true
     publish_rate: 50.0
+
+arm_joints_controller:
+  ros__parameters:
+    joints: ['arm_joint1', 'arm_joint2']
+    interface_name: 'position'
